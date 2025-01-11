@@ -5,6 +5,8 @@ import Footer from './Footer'
 import CustomerFilter from './CustomerFilter'
 import SearchBar from './SearchBar'
 import SearchManufacture from './SearchManufacture'
+import CarCard from './CarCard'
+import CarDetail from './CarDetail'
 
 
 export {
@@ -14,5 +16,7 @@ export {
     Footer,
     CustomerFilter,
     SearchBar,
-    SearchManufacture
+    SearchManufacture,
+    CarCard,
+    CarDetail
 }
