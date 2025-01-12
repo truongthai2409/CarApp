@@ -36,6 +36,11 @@ export interface FilterProps {
   limit?: number;
   fuel?: string;
 }
+export interface PageProps {
+  params: { [key: string]: string | string[] };
+  searchParams: { [key: string]: string | string[] | undefined };
+}
+
 export interface HomeProps {
-  params: FilterProps;
+  searchParams: { [key: string]: string | string[] | undefined };
 }

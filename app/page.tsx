@@ -1,21 +1,12 @@
-// "use client"
 import { CarCard, CustomerFilter, Hero, SearchBar } from "@/components";
 import { HomeProps } from "@/type";
-import { fetchCar } from "@/utils";
-import Image from "next/image";
+import { fetchCar, parseSearchParams } from "@/utils";
 
-export default async function Home({ params }: HomeProps) {
-  const filters = {
-    manufacturer: params?.manufacturer || "am",
-    // year: params?.year || 2022,
-    model: params?.model || "s450",
-    // limit: params?.limit || 10,
-    // fuel: params?.fuel || "",
-  };
+export default async function Home({ searchParams }: HomeProps) {
+  const filters = parseSearchParams(searchParams);
 
   try {
     const carData = await fetchCar(filters);
-    console.log(carData)
     const isDataEmpty = !Array.isArray(carData) || carData.length === 0;
 
     return (
